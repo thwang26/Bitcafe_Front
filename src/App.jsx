@@ -4,6 +4,7 @@ import MainPage from './pages/MainPage'
 import OrderPage from './pages/order/OrderPage'
 import CartPage from './pages/cart/CartPage'
 import OthersPage from './pages/others/OthersPage'
+import BottomNavigation from './components/BottomNavigation'
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
         <Route path='/cart' element={<CartPage />} />
         <Route path='/others' element={<OthersPage />} />
       </Routes>
+      <BottomNavigation/>
     </div>
-
   )
 }
 

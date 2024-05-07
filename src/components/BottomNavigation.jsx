@@ -1,45 +1,51 @@
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as S from '../styles/BottomNavigation.styled'
 import useIcon from '../hooks/useIcon'
-import { palette } from '../constants/Styles'
+import { palette, icon } from '../constants/Styles'
+import { GetPath } from './GetPath'
 
 const BottomNavigation = () => {
 	const navigate = useNavigate()
 	const { IcMain, IcOrder, IcCart, IcOthers } = useIcon()
-	const ICON_SIZE = 3
+	const [activeIcon, setActiveIcon] = useState()
+
+	const handleIconClick = (iconName) => {
+		setActiveIcon(iconName)
+		if (iconName === 'Home') {
+			navigate('/')
+		} else {
+			navigate(`/${iconName.toLowerCase()}`)
+		}
+	} // 아이콘 클릭 시 작동
+
+	useEffect(() => {
+        setActiveIcon(GetPath() || 'Home')
+    }, []) // bottomnavigation 랜더링 시 작동, path가 비어있으면 home
 
 	const BOTTOM_NAVIGATION_MENU_LIST = [
 		{
 			title: 'Home',
-			icon: <IcMain size={ICON_SIZE} color={palette.icon} />,
-			navigate: ''
+			icon: <IcMain size={icon.bottomNavigation} color={activeIcon === 'Home' ? palette.activeIcon : palette.icon} />,
 		},
 		{
 			title: 'Order',
-			icon: <IcOrder size={ICON_SIZE} color={palette.icon} />,
-			navigate: 'order'
+			icon: <IcOrder size={icon.bottomNavigation} color={activeIcon === 'Order' ? palette.activeIcon : palette.icon} />,
 		},
 		{
 			title: 'Cart',
-			icon: <IcCart size={ICON_SIZE} color={palette.icon} />,
-			navigate: 'cart'
+			icon: <IcCart size={icon.bottomNavigation} color={activeIcon === 'Cart' ? palette.activeIcon : palette.icon} />,
 		},
 		{
 			title: 'Others',
-			icon: <IcOthers size={ICON_SIZE} color={palette.icon} />,
-			navigate: 'others'
+			icon: <IcOthers size={icon.bottomNavigation} color={activeIcon === 'Others' ? palette.activeIcon : palette.icon} />,
 		},
 	]
-
-	const navigateTo = (pageName) => {
-		navigate(`/${pageName}`)
-	}
 
 	return (
 		<S.Main>
 			{BOTTOM_NAVIGATION_MENU_LIST.map(item => (
-				<S.WrapIcon key={item.title} onClick={() => navigateTo(item.navigate)}>
+				<S.WrapIcon key={item.title} onClick={() => handleIconClick(item.title)}>
 					{item.icon}
 					<S.Text>{item.title}</S.Text>
 				</S.WrapIcon>

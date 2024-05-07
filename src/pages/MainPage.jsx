@@ -6,7 +6,8 @@ import * as S from '../styles/MainPage.styled'
 
 const MainPage = () => {
     return (
-        <BottomNavigation />
+        <>
+        </>
     )
 }
 

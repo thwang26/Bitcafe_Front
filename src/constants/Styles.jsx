@@ -9,6 +9,7 @@ export const palette = {
     white: '#fff',
     yellow: '#FFE921',
     icon: '#A0A0A0',
+    activeIcon: '#6F4E37',
     hover: '#8B473C'
 }
 
@@ -17,4 +18,9 @@ export const typography = {
     subTitle: '2rem',
     content: '1.8rem',
     desc: '1.675rem',
+}
+
+export const icon = {
+    header: 3,
+    bottomNavigation: 3
 }

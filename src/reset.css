@@ -94,10 +94,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background: #fcf5ef; */
+    background: #fcf5ef;
     position: relative;
     text-align: center;
-    /* 배경색상 해결해야함 */
 }
 
 canvas,
