@@ -3,7 +3,7 @@ import { useState } from 'react'
 import * as S from '../styles/Header.styled'
 import useIcon from '../hooks/useIcon'
 import { palette, icon } from '../constants/Styles'
-import { GetPath } from './GetPath'
+import { GetPath } from '../utils/Utils'
 
 const Header = () => {
     const navigate = useNavigate()

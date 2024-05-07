@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import * as S from '../styles/BottomNavigation.styled'
 import useIcon from '../hooks/useIcon'
 import { palette, icon } from '../constants/Styles'
-import { GetPath } from './GetPath'
+import { GetPath } from '../utils/Utils'
 
 const BottomNavigation = () => {
 	const navigate = useNavigate()
