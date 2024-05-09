@@ -9,7 +9,6 @@ export const Main = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba( 255, 255, 255, 0.2 );
     margin: 0 auto;
     max-width: 640px;
     min-width: 320px;
@@ -22,18 +21,14 @@ export const Main = styled.div`
 `
 
 export const WrapIcon = styled.button`
-    position: left;
     display: flex;
-    flex: 1;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     color: ${palette.textPrimary}
-    &:hover {
-        color: ${palette.hover}
-    }
 `
 
 export const HeaderValue = styled.div`
-    position: center;
+    flex: 1;
+    text-align: center;
     font-size: ${typography.mainTitle}
 `

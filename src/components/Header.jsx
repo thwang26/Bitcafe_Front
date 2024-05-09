@@ -1,26 +1,32 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import * as S from '../styles/Header.styled'
 import useIcon from '../hooks/useIcon'
 import { palette, icon } from '../constants/Styles'
-import { GetPath } from '../utils/Utils'
 
-const Header = () => {
+const Header = (props) => {
     const navigate = useNavigate()
 	const { IcBack } = useIcon()
-    const headerValue = GetPath()
+    const location = useLocation()
 
     const handleBack = () => {
         navigate(-1) // 뒤로가기
     }
 
+    const isButtonDisabled = () => {
+        const disabledPaths = ['/', '/order', '/cart', '/others'];
+        return disabledPaths.includes(location.pathname);
+    }
+
 	return (
         <S.Main>
+            {!isButtonDisabled() &&
             <S.WrapIcon onClick={handleBack}>
                 <IcBack size={icon.header} color={palette.icon}/>
             </S.WrapIcon>
+            }
             <S.HeaderValue>
-                {headerValue}
+                {props.value}
             </S.HeaderValue>
         </S.Main>
 	)
