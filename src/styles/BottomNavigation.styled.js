@@ -10,7 +10,6 @@ export const Main = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba( 255, 255, 255, 0.2 );
     margin: 0 auto;
     max-width: 640px;
     min-width: 320px;
@@ -28,9 +27,6 @@ export const WrapIcon = styled.button`
     flex-direction: column;
     align-items: center;
     color: ${palette.textPrimary}
-    &:hover {
-        color: ${palette.hover}
-    }
 `
 
 export const Text = styled.span`
