@@ -9,6 +9,7 @@ import axiosInstance from '../../utils/FetchCall'
 const OrderPage = () => {
     const [categoryList, setCategoryList] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const navigate = useNavigate()
 
     const getCategoryList = async () => {
         try {
@@ -31,13 +32,12 @@ const OrderPage = () => {
 
     return (
         <>
-            <Header />
+            <Header value='Order' />
             {isLoading && (
                 <S.Container>
-                    {categoryList.map((item, index) => (
-                        <S.CategoryItem key={item.id} onClick={() => 
-                            console.log(item.categoryName)
-                            // TODO : 누르면 상세메뉴 노출
+                    {categoryList.map((item) => (
+                        <S.CategoryItem key={item.id} onClick={() =>
+                            navigate(`/order/menu/${item.id}`, { state: item.categoryName })
                         }>
                             <S.CategoryImage src={item.imagePath} />
                             <S.CategoryContext>
