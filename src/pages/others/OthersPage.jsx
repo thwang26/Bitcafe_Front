@@ -7,7 +7,7 @@ import Header from '../../components/Header'
 const OthersPage = () => {
     return (
         <>
-            <Header/>
+            <Header value='Others' />
         </>
     )
 }
