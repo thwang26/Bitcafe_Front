@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { palette, typography } from '../constants/Styles'
+import { palette, typography, zindex } from '../constants/Styles'
 
 export const Main = styled.div`
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: ${zindex.bottomNavigation};
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,6 +19,7 @@ export const Main = styled.div`
     border-bottom-right-radius: 20px;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
+    overflow: hidden;
 `
 
 export const WrapIcon = styled.button`
