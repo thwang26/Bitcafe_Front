@@ -1,11 +1,12 @@
 import styled from 'styled-components'
-import { palette, typography } from '../constants/Styles'
+import { palette, typography, zindex } from '../constants/Styles'
 
 export const Main = styled.div`
-    position: fixed;
+    position: sticky;
+    top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: ${zindex.header};
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,7 +14,7 @@ export const Main = styled.div`
     max-width: 640px;
     min-width: 320px;
     height: 80px;
-    padding: 8px 20px;
+    padding: 1rem 3rem;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     -webkit-backdrop-filter: blur(20px);
