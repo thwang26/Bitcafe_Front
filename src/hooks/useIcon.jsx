@@ -5,11 +5,11 @@ const useIcon = () => {
 				width={`${size}rem`}
 				height={`${size}rem`}
 				viewBox="0 0 900 900"
-				fill="none"
+				fill={color}
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<g transform="translate(0.000000,900.000000) scale(0.100000,-0.100000)"
-					fill={color} stroke="none">
+					stroke="none">
 					<path
 						fillRule="evenodd"
 						clipRule="evenodd"
@@ -38,11 +38,11 @@ const useIcon = () => {
 				width={`${size}rem`}
 				height={`${size}rem`}
 				viewBox="0 0 900 900"
-				fill="none"
+				fill={color}
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<g transform="translate(0.000000,900.000000) scale(0.100000,-0.100000)"
-					fill={color} stroke="none">
+					stroke="none">
 					<path d="M1893 8988 c1 -6 -14 -20 -34 -29 -20 -10 -57 -41 -82 -69 -38 -45
 					-46 -60 -51 -109 -4 -32 -4 -82 0 -113 5 -47 14 -63 60 -119 150 -179 151
 					-180 210 -299 36 -73 37 -77 37 -190 -1 -102 -3 -120 -24 -157 -55 -96 -102
@@ -124,11 +124,11 @@ const useIcon = () => {
 				width={`${size}rem`}
 				height={`${size}rem`}
 				viewBox="0 0 900 900"
-				fill="none"
+				fill={color}
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<g transform="translate(0.000000,900.000000) scale(0.100000,-0.100000)"
-					fill={color} stroke="none">
+					stroke="none">
 					<path d="M166 8427 c-48 -14 -129 -90 -150 -142 -21 -48 -21 -161 -1 -209 21
 				-51 95 -122 141 -137 30 -10 202 -14 753 -17 456 -2 719 -6 727 -13 6 -5 15
 				-22 18 -37 14 -57 26 -109 40 -177 7 -38 19 -83 25 -98 6 -16 11 -47 11 -70 1
@@ -194,11 +194,11 @@ const useIcon = () => {
 				width={`${size}rem`}
 				height={`${size}rem`}
 				viewBox="0 0 900 900"
-				fill="none"
+				fill={color}
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<g transform="translate(0.000000,900.000000) scale(0.100000,-0.100000)"
-					fill={color} stroke="none">
+					stroke="none">
 					<path d="M715 5370 c-227 -52 -404 -164 -544 -347 -66 -87 -129 -219 -154
 				-323 -13 -58 -13 -362 0 -420 67 -285 297 -536 583 -639 122 -44 309 -62 410
 				-41 25 6 65 14 90 19 107 21 222 78 345 170 73 55 83 65 148 149 134 174 191
@@ -228,10 +228,12 @@ const useIcon = () => {
 	const IcBack = ({ size, color }) => {
 		return (
 			<svg
+				color={color}
 				width={`${size}rem`}
 				height={`${size}rem`}
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
+				fill={color}
 			>
 				<g>
 					<rect width="24" height="24" opacity="0" transform="rotate(90 12 12)" />
@@ -244,12 +246,91 @@ const useIcon = () => {
 		)
 	}
 
+	const IcExit = ({ size, color }) => {
+		return (
+			<svg
+				width={`${size}rem`}
+				height={`${size}rem`}
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 460.775 460.775"
+				fill={color}
+			>
+				<path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+					c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+					c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+					c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+					l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+					c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+			</svg>
+		)
+	}
+
+	const IcMinus = ({ size, color }) => {
+		return (
+			<svg
+				width={`${size}rem`}
+				height={`${size}rem`}
+				xmlns="http://www.w3.org/2000/svg"
+				fillRule="evenodd"
+				clipRule="evenodd"
+				viewBox="0 0 24 24"
+				fill={color}
+			>
+				<path d="M11.5 0c6.347 0 11.5 5.153 11.5 11.5s-5.153 11.5-11.5 11.5-11.5-5.153-11.5-11.5 5.153-11.5 11.5-11.5zm0 1c5.795 
+					0 10.5 4.705 10.5 10.5s-4.705 10.5-10.5 10.5-10.5-4.705-10.5-10.5 4.705-10.5 10.5-10.5zm-6.5 10h13v1h-13v-1z"/>
+			</svg>
+		)
+	}
+
+	const IcPlus = ({ size, color }) => {
+		return (
+			<svg
+				width={`${size}rem`}
+				height={`${size}rem`}
+				xmlns="http://www.w3.org/2000/svg"
+				fillRule="evenodd"
+				clipRule="evenodd"
+				viewBox="0 0 24 24"
+				fill={color}
+			>
+				<path d="M11.5 0c6.347 0 11.5 5.153 11.5 11.5s-5.153 11.5-11.5 11.5-11.5-5.153-11.5-11.5 5.153-11.5 11.5-11.5zm0 1c5.795 
+					0 10.5 4.705 10.5 10.5s-4.705 10.5-10.5 10.5-10.5-4.705-10.5-10.5 4.705-10.5 10.5-10.5zm.5 10h6v1h-6v6h-1v-6h-6v-1h6v-6h1v6z"/>
+			</svg>
+		)
+	}
+
+	const IcHeart = ({ size, color }) => {
+		return (
+			<svg
+				width={`${size}rem`}
+				height={`${size}rem`}
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 471.701 471.701"
+				xml:space="preserve"
+			>
+				<g>
+					<path d="M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1
+						c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3
+						l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4
+						C471.801,124.501,458.301,91.701,433.601,67.001z M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3
+						s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4
+						c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3
+						C444.801,187.101,434.001,213.101,414.401,232.701z"/>
+				</g>
+			</svg>
+		)
+	}
+
 	return {
 		IcMain,
 		IcOrder,
 		IcCart,
 		IcOthers,
-		IcBack
+		IcBack,
+		IcExit,
+		IcPlus,
+		IcMinus,
+		IcHeart
 	}
 }
 
