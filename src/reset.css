@@ -54,7 +54,6 @@
     font-family: 'Pretendard-Regular', sans-serif;
     line-height: 1.5;
     font-weight: 400;
-
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -94,7 +93,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #fcf5ef;
     position: relative;
     text-align: center;
 }

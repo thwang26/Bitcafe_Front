@@ -10,7 +10,7 @@ import BottomNavigation from './components/BottomNavigation'
 
 const App = () => {
   return (
-    <div>
+    <>
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/order' element={<OrderPage />} />
@@ -20,7 +20,7 @@ const App = () => {
         <Route path='/others' element={<OthersPage />} />
       </Routes>
       <BottomNavigation/>
-    </div>
+    </>
   )
 }
 
