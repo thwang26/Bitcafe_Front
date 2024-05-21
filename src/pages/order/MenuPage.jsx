@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useLocation } from "react-router"
 import Header from '../../components/Header'
-import * as S from '../../styles/order/OrderPage.styled'
+import * as S from '../../styles/order/MenuPage.styled'
 import axiosInstance from '../../utils/FetchCall'
 import { formatPrice } from '../../utils/Utils'
 
@@ -39,16 +39,16 @@ const MenuPage = () => {
             {isLoading && (
                 <S.Container>
                     {menuList.map((item) => (
-                        <S.CategoryItem key={item.id} onClick={() =>
+                        <S.MenuItem key={item.id} onClick={() =>
                             navigate(`/order/menu/detail/${item.id}`, { state: item.menuName })
                         }>
-                            <S.CategoryImage src={item.imagePath} />
-                            <S.CategoryContext>
-                                <S.CategoryName>{item.menuName}</S.CategoryName>
-                                <S.CategoryContent>{item.menuContent}</S.CategoryContent>
-                                <div>{formatPrice(item.menuPrice)}</div>
-                            </S.CategoryContext>
-                        </S.CategoryItem>
+                            <S.MenuImage src={item.imagePath} />
+                            <S.MenuContext>
+                                <S.MenuName>{item.menuName}</S.MenuName>
+                                <S.MenuContent>{item.menuContent}</S.MenuContent>
+                                <S.MenuPrice>{formatPrice(item.menuPrice)}</S.MenuPrice>
+                            </S.MenuContext>
+                        </S.MenuItem>
                     ))}
                 </S.Container>
             )}
