@@ -7,10 +7,13 @@ import OthersPage from './pages/others/OthersPage'
 import MenuPage from './pages/order/MenuPage'
 import MenuDetailPage from './pages/order/MenuDetailPage'
 import BottomNavigation from './components/BottomNavigation'
+import { SpinnerProvider } from './utils/SpinnerContext'
+import Spinner from './components/Spinner'
 
 const App = () => {
   return (
-    <>
+    <SpinnerProvider>
+      <Spinner/>
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/order' element={<OrderPage />} />
@@ -20,7 +23,7 @@ const App = () => {
         <Route path='/others' element={<OthersPage />} />
       </Routes>
       <BottomNavigation/>
-    </>
+    </SpinnerProvider>
   )
 }
 
