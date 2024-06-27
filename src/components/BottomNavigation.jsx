@@ -21,22 +21,22 @@ const BottomNavigation = () => {
 	const BOTTOM_NAVIGATION_MENU_LIST = [
 		{
 			title: 'Home',
-			icon: <IcMain size={icon.bottomNavigation} color={activeIcon === 'Home' ? palette.activeIcon : palette.icon} />,
+			icon: <IcMain size={icon.bottomNavigation} color={activeIcon === 'Home' ? palette.activeIcon : palette.disabledIcon} />,
 			navigate: ''
 		},
 		{
 			title: 'Order',
-			icon: <IcOrder size={icon.bottomNavigation} color={activeIcon === 'Order' ? palette.activeIcon : palette.icon} />,
+			icon: <IcOrder size={icon.bottomNavigation} color={activeIcon === 'Order' ? palette.activeIcon : palette.disabledIcon} />,
 			navigate: 'order'
 		},
 		{
 			title: 'Cart',
-			icon: <IcCart size={icon.bottomNavigation} color={activeIcon === 'Cart' ? palette.activeIcon : palette.icon} />,
+			icon: <IcCart size={icon.bottomNavigation} color={activeIcon === 'Cart' ? palette.activeIcon : palette.disabledIcon} />,
 			navigate: 'cart'
 		},
 		{
 			title: 'Others',
-			icon: <IcOthers size={icon.bottomNavigation} color={activeIcon === 'Others' ? palette.activeIcon : palette.icon} />,
+			icon: <IcOthers size={icon.bottomNavigation} color={activeIcon === 'Others' ? palette.activeIcon : palette.disabledIcon} />,
 			navigate: 'others'
 		},
 	]
