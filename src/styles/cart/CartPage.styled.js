@@ -9,41 +9,47 @@ export const Container = styled.div`
   width: 640px;
   border: none;
   overflow: auto; /* 세로 스크롤바를 항상 표시하도록 설정 */
-  padding-bottom: 160px; /* bottomnavigation의 높이만큼 여백 추가 */
+  padding-top: 80px;
+  padding-bottom: 80px; /* bottomnavigation의 높이만큼 여백 추가 */
 `
 
-export const CategoryImage = styled.img`
-  width: 12rem;
-  height: 12rem;
+export const MenuImage = styled.img`
+  width: 14rem;
+  height: 14rem;
   border-radius: ${radius.itemImage};
   object-fit: cover;
 `
 
-export const CategoryItem = styled.div`
+export const MenuItem = styled.div`
   width: 580px;
   margin: 10px auto 10px auto;
   display: flex;
   flex-direction: row;
+  height: 200px;
 `
 
-export const CategoryContext = styled.div`
+export const MenuContext = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 `
 
-export const CategoryName = styled.div`
+export const MenuName = styled.div`
   font-size: 120%;
 `
 
-export const CategoryContent = styled.div`
+export const MenuContent = styled.div`
   color: #ced4da;
+`
+
+export const MenuPrice = styled.div`
+  margin: 10px
 `
 
 export const StoreSelectorWrapper = styled.div`
     position: fixed;
-    bottom: 80px;
+    top: 80px;
     left: 0;
     right: 0;
     z-index: ${zindex.order};
@@ -54,4 +60,10 @@ export const StoreSelectorWrapper = styled.div`
     max-width: 640px;
     min-width: 320px;
     height: 80px;
+`
+
+export const QtyPriceWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 `

@@ -5,9 +5,12 @@ import useIcon from '../../hooks/useIcon'
 import { palette, icon } from '../../constants/Styles'
 import { useEffect } from 'react'
 import { formatPrice } from '../../utils/Utils'
+import axiosInstance from '../../utils/FetchCall'
+import AddedModal from './AddedModal'
 
 const OrderModal = ({
     setIsOrderModalOpen,
+    menuId,
     menuName,
     menuPrice
 }) => {
@@ -16,10 +19,11 @@ const OrderModal = ({
     const timerRef = useRef(null);
     const [totalPrice, setTotalPrice] = useState(menuPrice)
     const [quantity, setQuantity] = useState(1)
+    const [isAddedModalOpen, setisAddedModalOpen] = useState(false)
 
     useEffect(() => {
         if (!isOpen) {
-            timerRef.current = setTimeout(() => setIsOrderModalOpen(false), 200)
+            timerRef.current = setTimeout(() => setIsOrderModalOpen(false), 300)
         }
 
         return () => clearTimeout(timerRef.current)
@@ -28,6 +32,21 @@ const OrderModal = ({
     const handleClickCounter = (num) => {
         setQuantity((prev) => prev + num)
         setTotalPrice((prev) => prev + menuPrice * num)
+    }
+
+    const addCart = async () => {
+        try {
+            const res = await axiosInstance
+                .post('/api/cart', {
+                    menuId: menuId,
+                    qty: quantity
+                })
+            if (res.status === 200) {
+                setisAddedModalOpen(true)
+            }
+        } catch (error) {
+            console.log(error.response)
+        }
     }
 
     return (
@@ -58,13 +77,20 @@ const OrderModal = ({
                                 <IcHeart size={icon.modal} color={palette.icon} />
                             </S.WrapIcon>
                             <S.ButtonWrapper>
-                                <S.AddButton>담기</S.AddButton>
-                                <S.OrderButton
-                                    onClick={() => alert('아직 없어요')}
-                                >주문하기</S.OrderButton>
+                                <S.AddButton onClick={() => addCart()}>
+                                    담기
+                                </S.AddButton>
+                                <S.OrderButton onClick={() => alert('아직 없어요')}>
+                                    주문하기
+                                </S.OrderButton>
                             </S.ButtonWrapper>
                         </S.ActiveWrapper>
                     </S.BottomWrapper>
+                    {isAddedModalOpen && (
+                        <AddedModal
+                            setisAddedModalOpen={setisAddedModalOpen}
+                        />
+                    )}
                 </S.ModalWrapper>
             </S.Container>
         </>

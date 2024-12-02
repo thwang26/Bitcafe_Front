@@ -11,14 +11,12 @@ export const Main = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    width: 100%;
     max-width: 640px;
     min-width: 320px;
     height: 80px;
     padding: 1rem 3rem;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    background-color: white;
 `
 
 export const WrapIcon = styled.button`

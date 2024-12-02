@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { palette, typography, radius } from '../../constants/Styles'
+import { palette, typography, radius, zindex } from '../../constants/Styles'
 
 export const Container = styled.div`
   position: relative;
@@ -9,7 +9,7 @@ export const Container = styled.div`
   width: 640px;
   border: none;
   overflow: auto; /* 세로 스크롤바를 항상 표시하도록 설정 */
-  padding-bottom: 80px; /* bottomnavigation의 높이만큼 여백 추가 */
+  padding-bottom: 160px; /* bottomnavigation의 높이만큼 여백 추가 */
 `
 
 export const MenuImage = styled.img`
@@ -43,4 +43,19 @@ export const MenuContent = styled.div`
 
 export const MenuPrice = styled.div`
   margin: 10px
+`
+
+export const StoreSelectorWrapper = styled.div`
+    position: fixed;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    z-index: ${zindex.order};
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 640px;
+    min-width: 320px;
+    height: 80px;
 `

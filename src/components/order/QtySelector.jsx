@@ -22,8 +22,9 @@ const QtySelector = ({
                 <S.WrapIcon
                     onClick={() => onClick(1)}
                     aria-label='수량 올리기'
+                    disabled={quantity === 20}
                 >
-                    <IcPlus size={icon.modal} color={palette.icon} />
+                    <IcPlus size={icon.modal} color={quantity === 20 ? palette.disabledIcon : palette.icon} />
                 </S.WrapIcon>
             </S.SelectorWrapper>
         </>

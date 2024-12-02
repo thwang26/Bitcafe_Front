@@ -15,23 +15,20 @@ import {
 export const Container = styled.div`
   z-index: ${zindex.modal};
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
   width: 640px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: ${({ open }) => (open ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0)')};
   animation: ${({ open }) => (open ? fadeIn : fadeOut)} 0.3s ease-in-out;
 `
 
 export const ModalWrapper = styled.div`
   position: fixed;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 0;
+  transform: ${({ open }) => (open ? 'translateY(0)' : 'translateY(100%)')};
   display: flex;
   width: 640px;
-  height: calc(100% - 80px);
+  height: 97vh;
   background-color: ${palette.white};
   border-top-left-radius: ${radius.modal};
   border-top-right-radius: ${radius.modal};

@@ -6,12 +6,13 @@ export const palette = {
     divider: '#D9D9D9',
     shadow: 'rgba(0,0,0,10%)',
     dim: 'rgba(0,0,0,70%)',
-    white: '#fff',
+    white: '#FFF',
     yellow: '#FFE921',
     icon: '#404040',
     disabledIcon: '#BBBBBB',
     activeIcon: '#6F4E37',
-    hover: '#8B473C'
+    hover: '#8B473C',
+    selector: '#2C2926'
 }
 
 export const typography = {
@@ -33,11 +34,13 @@ export const zindex = {
     bottomNavigation: 10,
     order: 11,
     modal: 20,
+    spinner: 999
 }
 
 export const radius = {
     itemImage: '70%',
     detailImage: 0,
+    storeImage: '10%',
     button: '2rem',
     modal: '2rem'
 }

@@ -5,13 +5,13 @@ export const fadeIn = keyframes`
     background-color: rgba(0, 0, 0, 0);
   }
   to {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 `
 
 export const fadeOut = keyframes`
   from {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
   }
   to {
     background-color: rgba(0, 0, 0, 0);
@@ -20,18 +20,36 @@ export const fadeOut = keyframes`
 
 export const slideUpAnimation = keyframes`
   from {
-    transform: translate(-50%, 100%);
+    transform: translateY(100%);
   }
   to {
-    transform: translate(-50%, -50%);
+    transform: translateY(0%);
   }
 `
 
 export const slideDownAnimation = keyframes`
   from {
-    transform: translate(-50%, -50%);
+    transform: translateY(0%);
   }
   to {
-    transform: translate(-50%, 100%);
+    transform: translateY(100%);
+  }
+`
+
+export const slideInAnimation = keyframes`
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+`
+
+export const slideOutAnimation = keyframes`
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
   }
 `

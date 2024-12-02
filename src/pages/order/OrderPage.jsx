@@ -5,6 +5,7 @@ import Header from '../../components/Header'
 import BottomNavigation from '../../components/BottomNavigation'
 import * as S from '../../styles/order/OrderPage.styled'
 import axiosInstance from '../../utils/FetchCall'
+import StoreSelector from '../../components/store/StoreSelector'
 
 const OrderPage = () => {
     const [categoryList, setCategoryList] = useState([])
@@ -34,19 +35,24 @@ const OrderPage = () => {
         <>
             <Header value='Order' />
             {isLoading && (
-                <S.Container>
-                    {categoryList.map((item) => (
-                        <S.CategoryItem key={item.id} onClick={() =>
-                            navigate(`/order/menu/${item.id}`, { state: item.categoryName })
-                        }>
-                            <S.CategoryImage src={item.imagePath} />
-                            <S.CategoryContext>
-                                <S.CategoryName>{item.categoryName}</S.CategoryName>
-                                <S.CategoryContent>{item.categoryContent}</S.CategoryContent>
-                            </S.CategoryContext>
-                        </S.CategoryItem>
-                    ))}
-                </S.Container>
+                <>
+                    <S.Container>
+                        {categoryList.map((item) => (
+                            <S.CategoryItem key={item.id} onClick={() =>
+                                navigate(`/order/menu/${item.id}`, { state: item.categoryName })
+                            }>
+                                <S.CategoryImage src={item.imagePath} />
+                                <S.CategoryContext>
+                                    <S.CategoryName>{item.categoryName}</S.CategoryName>
+                                    <S.CategoryContent>{item.categoryContent}</S.CategoryContent>
+                                </S.CategoryContext>
+                            </S.CategoryItem>
+                        ))}
+                    </S.Container>
+                    <S.StoreSelectorWrapper>
+                        <StoreSelector />
+                    </S.StoreSelectorWrapper>
+                </>
             )}
         </>
     )

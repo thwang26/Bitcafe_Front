@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 import MainPage from './pages/MainPage'
 import OrderPage from './pages/order/OrderPage'
 import CartPage from './pages/cart/CartPage'
@@ -7,7 +6,7 @@ import OthersPage from './pages/others/OthersPage'
 import MenuPage from './pages/order/MenuPage'
 import MenuDetailPage from './pages/order/MenuDetailPage'
 import BottomNavigation from './components/BottomNavigation'
-import { SpinnerProvider } from './utils/SpinnerContext'
+import {SpinnerProvider} from './utils/SpinnerContext'
 import Spinner from './components/Spinner'
 
 const App = () => {

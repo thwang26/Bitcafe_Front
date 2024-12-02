@@ -14,17 +14,17 @@ const MenuDetailPage = () => {
     const [menu, setMenu] = useState()
     const [isLoading, setIsLoading] = useState(false)
     const [isOrderModalOpen, setIsOrderModalOpen] = useState(false)
-    const navigate = useNavigate()
 
     const getMenu = async () => {
         try {
             const res = await axiosInstance.get(`/api/menu/detail/${menuId}`)
             if (res.status === 200) {
                 setMenu(res.data)
-                setIsLoading(true)
             }
         } catch (error) {
             console.log(error)
+        } finally {
+            setIsLoading(true)
         }
     }
 
@@ -54,6 +54,7 @@ const MenuDetailPage = () => {
                     {isOrderModalOpen && (
                         <OrderModal
                             setIsOrderModalOpen={setIsOrderModalOpen}
+                            menuId={menu.id}
                             menuName={menu.menuName}
                             menuPrice={menu.menuPrice}
                         />
